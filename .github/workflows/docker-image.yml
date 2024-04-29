@@ -15,8 +15,8 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build docker build -t hossam999/total_seg .
+      run: docker build . --file Dockerfile --tag hossam999/total_seg:$(date +%s)
     - name: login
-      run: docker login -u hossam999 -p ${{ secrets.DOCKER_HUB_TOKEN}}
+      run: docker login -u hossam999 -p ${{secrets.DOCKER_HUB_TOKEN}}
     - name: push the Docker image
       run: docker push hossam999/total_seg:latest
