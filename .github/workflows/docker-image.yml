@@ -19,6 +19,6 @@ jobs:
     - name: login
       run: docker login -u hossam999 -p ${{secrets.DOCKER_HUB_TOKEN}}
     - name: Tag the Docker image
-      run: docker tag total_seg:latest hossam999/total_seg:latest_2 
+      run: docker tag total_seg_2:latest hossam999/total_seg:latest_2 
     - name: push the Docker image
       run: docker push hossam999/total_seg:latest 
