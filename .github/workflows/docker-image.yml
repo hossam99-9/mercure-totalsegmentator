@@ -19,4 +19,4 @@ jobs:
     - name: login
       run: docker login -u hossam999 -p ${{secrets.DOCKER_HUB_TOKEN}}
     - name: push the Docker image
-      run: docker push hossam999/total_seg:latest
+      run: docker push hossam999/total_seg:latest 
