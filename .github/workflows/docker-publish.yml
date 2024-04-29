@@ -1,8 +1,12 @@
 name: Publish image to Docker Hub
 on:
-[workflow dispatch]
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
 jobs:
-  publish image:
+  publish_image:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
