@@ -1,0 +1,15 @@
+name: Publish image to Docker Hub
+on:
+[workflow dispatch]
+jobs:
+  publish image:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+      - uses: actions/checkout@v3
+      - name: build
+      - run: |
+          docker build . -t hossam999/total_seg
+      - name: publish
+      - run: |
+          docker login -u hossam999 
