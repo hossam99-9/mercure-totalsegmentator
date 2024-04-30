@@ -48,7 +48,7 @@ class TotalSegmentatorOperator(Operator):
         print("Checking device...")
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         print("device being used:", device)
-
+        print("before",os.listdir(nii_seg_output_path))
         # Run TotalSegmentator
         if device == torch.device("cuda"):
             print("running full version")
@@ -57,7 +57,7 @@ class TotalSegmentatorOperator(Operator):
             print("running fast version")
             subprocess.run(["TotalSegmentator", "-i", nii_input_file, "-o", nii_seg_output_path,"--fast","--ml","--statistics"])
         
-
+        print("After",os.listdir(nii_seg_output_path))
         logging.info(f"Performed TotalSegmentator processing")
 
         # Set output path for next operator

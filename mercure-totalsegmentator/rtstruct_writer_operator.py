@@ -45,8 +45,10 @@ class RTStructWriterOperator(Operator):
 
         # create new RT Struct - requires original DICOM
         rtstruct = RTStructBuilder.create_new(dicom_series_path=dcm_input_path)
+        
 
         nii_seg_file = os.path.join(nii_seg_output_path,'nii_input','nii_seg_output.nii')
+        print("Files After Total_seg",os.listdir(nii_seg_file))
 
         nii = nib.load(nii_seg_file)
         spacing = nii.header.get_zooms()
