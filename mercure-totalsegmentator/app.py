@@ -36,7 +36,7 @@ from rtstruct_writer_operator import RTStructWriterOperator
 
 from monai.deploy.core import Application, resource
 
-# @md.resource(gpu=1)
+@md.resource(gpu=1)
 class TotalSegmentatorApp(Application):
     """
     TotalSegmentator - segmentation of 104 anatomical structures in CT images.
