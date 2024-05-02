@@ -5,7 +5,7 @@ FROM continuumio/miniconda3
 RUN mkdir -m777 /app
 WORKDIR /app
 ADD docker-entrypoint.sh ./
-ADD mercure-totalsegmentator ./mercure-totalsegmentator
+
 
 RUN chmod 777 ./docker-entrypoint.sh
 
@@ -99,5 +99,6 @@ RUN wget --directory-prefix ${WEIGHTS_DIR} ${WEIGHTS_URL_6} \
 ENV TOTALSEG_WEIGHTS_PATH="/app/totalsegmentator/nnunet/results/"
 RUN chmod -R 777 /app/totalsegmentator
 WORKDIR /app
+ADD mercure-totalsegmentator ./mercure-totalsegmentator
 
 CMD ["./docker-entrypoint.sh"]
